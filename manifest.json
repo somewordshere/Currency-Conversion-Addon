@@ -1,0 +1,27 @@
+{
+    "manifest_version": 3,
+    "name": "Currency Conversion",
+    "version": "1.0",
+    "description": "A simple extension to conver currency on the go.",
+    "permissions": ["scripting","activeTab","storage"],
+    "host_permissions": [
+      "<all_urls>"
+    ],
+    "icons":{
+      "128": "icon.png"
+    },
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": "icon.png"
+    },
+    "background":{
+      "service_worker": "live-converter.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ]
+  }
+  
